@@ -1,6 +1,8 @@
 {% load static %}
-
 <!DOCTYPE html>
+<!-- <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p> -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -36,6 +38,31 @@
 
     <!-- Template Main CSS File -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <style>
+      h5 {
+        padding: 30px 0 5px;
+        position: relative;
+      }
+
+      h5::before {
+        content: "";
+        position: absolute;
+        left: 10%;
+        bottom: 12%;
+        width: 20%;
+        height: 5%;
+        transform: skew(-12deg) translateX(-50%);
+        background: rgba(190, 62, 36, 0.5);
+        z-index: 0;
+      }
+      .dp {
+        margin: 1% !important;
+        box-shadow: 0 4px 8px 0 rgba(247, 52, 87, 0.2),
+          0 6px 20px 0 rgba(215, 91, 91, 0.19);
+        text-align: center;
+        border-radius: 5px;
+      }
+    </style>
 
     <!-- =======================================================
   * Template Name: DevFolio - v4.7.1
@@ -71,7 +98,7 @@
               <li class="breadcrumb-item">
                 <a href="#">Home</a>
               </li>
-              <li class="breadcrumb-item active">Udemy Web Clone Details</li>
+              <li class="breadcrumb-item active">{{ pdetails }}</li>
             </ol>
           </div>
         </div>
@@ -87,15 +114,15 @@
               <div class="portfolio-details-slider swiper">
                 <div class="swiper-wrapper align-items-center">
                   <div class="swiper-slide">
-                    <img src="static/img/udemy-web-pt-1.png" alt="" />
+                    <img src="{{ imgslide1 }}" alt="" />
                   </div>
 
                   <div class="swiper-slide">
-                    <img src="static/img/udemy-web-pt-2.png" alt="" />
+                    <img src="{{ imgslide2 }}" alt="" />
                   </div>
 
                   <div class="swiper-slide">
-                    <img src="static/img/udemy-wireframe.png" alt="" />
+                    <img src="{{  imgslide3 }}" alt="" />
                   </div>
                 </div>
                 <div class="swiper-pagination"></div>
@@ -110,11 +137,11 @@
                   <li>
                     <strong>Used Technologies</strong>: Adobe XD & Some Plugins
                   </li>
-                  <li><strong>Project date</strong>: 07 December, 2021</li>
+                  <li><strong>Project date</strong>: {{ projectdate }}</li>
                   <li>
                     <strong>Project URL</strong>:
                     <a
-                      href="https://drive.google.com/file/d/1rEZNHd4wS14H-oUePc3cfp0wGWlCoZ0A/view?usp=sharing"
+                      href="{{ drivelink }}"
                       >https://drive.google.com</a
                     >
                   </li>
@@ -126,9 +153,265 @@
       </section>
       <!-- End Portfolio Details Section -->
     </main>
+
+    <br />
+    <br />
+    <!-- Card section -->
+
+    
+    <div
+      class="container"
+      style="border: 2px solid rgb(66, 175, 124); border-radius: 15px"
+    >
+      <h4 class="hero-title mb-4" style="text-align: center; padding-top: 20px">
+        <u>Project Overview</u>
+      </h4>
+      <br />
+      <div class="card-group">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">The Product</h5>
+            <p class="card-text">
+              {{ theproduct }}
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">The Problem</h5>
+            <p class="card-text">
+              {{ theproblem }}
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">The Goal</h5>
+            <p class="card-text">
+              {{ thegoal1 }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card-group">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">My Role</h5>
+            <p class="card-text">
+              {{ myrole }}
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Responsibilities</h5>
+            <p class="card-text">
+              {{ responsibilities }}
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">The Goal</h5>
+            <p class="card-text">{{ thegoal2 }}</p>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+    </div>
+    <br /><br />
+    <div
+      class="container"
+      style="border: 2px solid rgb(227, 83, 88); border-radius: 15px"
+    >
+      <h4 class="hero-title mb-4" style="text-align: center; padding-top: 20px">
+        <u>Design Process</u>
+      </h4>
+      <br /><br />
+      <div class="card-group">
+        <div class="card dp">
+          <div class="card-body">
+            <h6 class="card-text">Empathize</h6>
+          </div>
+        </div>
+        <div class="card dp">
+          <div class="card-body">
+            <h6 class="card-text">Define</h6>
+          </div>
+        </div>
+        <div class="card dp">
+          <div class="card-body">
+            <h6 class="card-text">Ideate</h6>
+          </div>
+        </div>
+        <div class="card dp">
+          <div class="card-body">
+            <h6 class="card-text">Prototype</h6>
+          </div>
+        </div>
+        <div class="card dp">
+          <div class="card-body">
+            <h6 class="card-text">Test</h6>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+    </div>
+    <br /><br />
+
+    <div
+      class="container"
+      style="border: 2px solid rgb(87, 96, 221); border-radius: 15px"
+    >
+      <h4 class="hero-title mb-4" style="text-align: center; padding-top: 20px">
+        <u>Understanding The User</u>
+      </h4>
+      <br />
+      <div class="card-group">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">User Research</h4>
+            <p class="card-text">
+              {{ userresearch }}
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Pain Points</h4>
+            <p class="card-text">
+              <ul>
+                <li><b>{{ pp1t }}</b> {{ pp1ex }}</li>
+                <li><b>{{ pp2t }}</b> {{ pp2ex }}</li>
+                <li><b>{{ pp3t }}</b> {{ pp3ex }}</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <br />
+    </div>
+
+    <br><br>
+
+    <div
+      class="container" style="width:600px"
+      style="border: 2px solid rgb(87, 96, 221); border-radius: 15px"
+    >
+      <h4 class="hero-title mb-4" style="text-align: center; padding-top: 20px">
+        <u>Persona</u>
+      </h4>
+      <br />
+      
+      <div class="row">
+      <div class="card col" style="border: none !important; border-radius: 0px !important" >
+        <img class="card-img-top" src="{{cardprofile}}" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">{{ cardname }}</h4>
+          <br/>
+          <div class="row">
+          <div class="col">
+          <h6 class="card-title">Age: {{ cardage }}</h6>
+          <h6 class="card-title">{{doing}}</h6>
+          <h6 class="card-title">{{living}}</h6>
+          </div>
+          <div class="col" style="color:rgb(55, 92, 125)">
+            <b>"{{cardquote}}"</b>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card col" style="border: none !important; border-radius: 0px !important;" >
+        <!--  -->
+        <div class="card-body">
+          <h6 class="card-title" style="text-align:center;"><b style="color:rgb(77, 68, 166);">Say</b>:<br/> {{say}}</h6>
+          <br/>
+          <h6 class="card-title" style="text-align: center;"><b style="color:rgb(77, 68, 166)">Think</b>:<br/> {{think}}</h6>
+          
+          <br>
+          <br>
+          <img class="card-img-top" style="border-radius: 50%;" src="{{cardprofile}}" alt="Card image">
+          <br />
+          <br>
+          <h6 class="card-title" style="text-align: center;"><b style="color:rgb(77, 68, 166)">Does</b>:<br/> {{does}}</h6>
+          <br>
+          <h6 class="card-title" style="text-align: center;"><b style="color:rgb(77, 68, 166)">Feel</b>:<br/> {{feel}}</h6>
+        </div>
+        
+      </div>
+      </div>
+
+      <br />
+      <br />
+    </div>
+
+    <div
+      class="container"
+      style="border: 2px solid rgb(201, 180, 44); border-radius: 15px"
+    >
+      <h4 class="hero-title mb-4" style="text-align: center; padding-top: 20px">
+        <u>Style Guide</u>
+      </h4>
+      <br />
+      <div class="card-group">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-text" style="text-align: center;"><i style="color:rgb(82, 19, 40)">I created consistent and well organized color system</i></div>
+            <br>
+            <div class="card-group">
+              <div class="card">
+                <div class="card-body" style="background-color: {{col1}};">
+                  <p class="card-text">{{col1}}</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body" style="background-color: {{col2}};">
+                  <p class="card-text">{{col2}}</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body" style="background-color: {{col3}};">
+                  <p class="card-text">{{col3}}</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body" style="background-color: {{col4}};">
+                  <p class="card-text">{{col4}}</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body" style="background-color: {{col5}};">
+                  <p class="card-text">{{col5}}</p>
+                </div>
+              </div>
+            </div>
+            <br>
+            <br>
+            <div style="text-align: center;">
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{font}}</h1>
+            <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{font}}</h2>
+            <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{font}}</h3>
+            <h4 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{font}}</h4>
+            <h6 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{font}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <br />
+    </div>
+    <br /><br />
+    
+    <!-- End Card section -->
     <!-- End #main -->
 
     <!-- ======= Footer ======= -->
+
     <footer>
       <div class="container">
         <div class="row">
