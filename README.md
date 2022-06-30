@@ -1,1 +1,1 @@
-Portfolio made with Django
+As it is my first fullstack application and since GitHub hosting doesn't support dynamic websites or anything requiring a backend or secret data, i hosted it on Heroku <a href="https://adhithyanmv.herokuapp.com/" target="_blank">View</a>
