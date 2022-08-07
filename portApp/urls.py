@@ -14,4 +14,5 @@ urlpatterns = [
     path("project7", views.project7),
     path("project8", views.project8),
     path("project9", views.project9),
+    path("project10", views.project10),
 ]
