@@ -188,3 +188,12 @@ def project9(request):
 
 def project10(request):
     return render(request, 'portfolio-details10.html')
+
+def project11(request):
+    return render(request, 'portfolio-details11.html')
+
+def project12(request):
+    return render(request, 'portfolio-details12.html')
+
+def project13(request):
+    return render(request, 'portfolio-details13.html')
