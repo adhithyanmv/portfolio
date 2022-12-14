@@ -1,4 +1,12 @@
+const certificates = document.querySelectorAll(".certs");
 
+certificates.forEach((e) => {
+  e.addEventListener("click", (ev) => {
+    window.open(e.dataset.target);
+  });
+});
+
+/*prettier-ignore*/
 (function () {
   "use strict";
 
